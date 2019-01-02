@@ -16,4 +16,19 @@ def bottles(n):
 			print("Take one down and pass it around,", bottles, "bottles of beer on the wall.")
 			print()
 			bottles -= 1
-	
+
+#Counts the letters and determines if the count is same for 2 digits
+def xo(s,a,b):
+	print(s.lower().count(a))
+	print(s.lower().count(b))
+	return s.lower().count(a) == s.lower().count(b)
+
+#Builds a tower
+def tower_builder(n_floors):
+    n = n_floors * 2 - 1
+    offset = int((n-1)/2)
+    a = []
+    for i in range(n_floors):
+        print(" " * offset + ("*" * ((i+1)*2 - 1)) + " " * offset)
+        offset -= 1
+ 
