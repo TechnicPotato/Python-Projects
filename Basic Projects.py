@@ -1,3 +1,4 @@
+import turtle
 #99 Bottles of Beer
 def bottles(n):
 	bottles = n
@@ -31,4 +32,16 @@ def tower_builder(n_floors):
     for i in range(n_floors):
         print(" " * offset + ("*" * ((i+1)*2 - 1)) + " " * offset)
         offset -= 1
- 
+#Builds a funny shape
+t = turtle.Turtle()
+t.ht()
+def rotation(distance,n):
+	t.speed(10)
+	for i in range(n):
+		t.fd(distance)
+		t.bk(distance/2)
+		t.rt(360/n)
+	input()
+	t.clear()
+
+		
