@@ -1,4 +1,4 @@
-import turtle
+import turtle, time
 #99 Bottles of Beer
 def bottles(n):
 	bottles = n
@@ -41,7 +41,6 @@ def rotation(distance,n):
 		t.fd(distance)
 		t.bk(distance/2)
 		t.rt(360/n)
-	input()
+	time.sleep(10)
 	t.clear()
-
-		
+rotation(100,2,2)
