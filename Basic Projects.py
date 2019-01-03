@@ -43,3 +43,10 @@ def rotation(distance,n):
 		t.rt(360/n)
 	time.sleep(10)
 	t.clear()
+
+#Experiments with dictionaries
+student_grades = {}
+def gradeinput(Name,Grade):
+	student_grades[str(Name)] = str(Grade)
+def clear():
+	student_grades = {}
