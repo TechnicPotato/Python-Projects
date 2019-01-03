@@ -1,5 +1,5 @@
 #Ball drop gravity simulation
-import pygame
+import pygame, random
 (width,height)= 1280,720 #Change to be an input later
 screen = pygame.display.set_mode((width,height))
 #Window Properties
@@ -19,9 +19,19 @@ class ball:
 #Display Balls
     def display(self):
         pygame.draw.circle(screen, self.colour, (self.x, self.y), self.size, self.thickness)
- #Testing Balls
-testball = ball((200,200),14)
-testball.display()
+
+#Number of Balls
+BallNumber = 10
+balllist = []
+#Alters randomness of Balls
+for n in range(BallNumber):
+    size = random.randint(1,20)
+    x = random.randint(size,width-size)
+    y = random.randint (size, height-size)
+    balllist.append((ball(x,y),size))
+#Display Balls
+for ball in balllist:
+    ball.display()
 
 #Flip command. Call last! IMPORTANT
 pygame.display.flip()
