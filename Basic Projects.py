@@ -43,4 +43,3 @@ def rotation(distance,n):
 		t.rt(360/n)
 	time.sleep(10)
 	t.clear()
-rotation(100,2,2)
