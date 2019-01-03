@@ -41,5 +41,5 @@ def rotation(distance,n):
 		t.fd(distance)
 		t.bk(distance/2)
 		t.rt(360/n)
-	time.sleep(10)
+	time.sleep(8)
 	t.clear()
