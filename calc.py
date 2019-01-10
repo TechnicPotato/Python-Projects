@@ -14,23 +14,29 @@ if len(sys.argv) == 4: #Sys.argv[0] returns file directory
     operand2 = sys.argv[3]
     operator = sys.argv[2]
     if conditions(operand1) and conditions(operand2):
+        f1 = float(operand1)
+        f2 = float(operand2)
+        validOperator == True
+        dividebyZero == False
         if operator == "+":
-            result = float(operand1) + float(operand2)
-            print(result)
+            result = f1 + f2
         elif operator == "-":
-            result = float(operand1) - float(operand2)
-            print(result)
+            result = f1 - f2
         elif operator == "*":
-            result = float(operand1) * float(operand2)
-            print(result)
+            result = f1 * f2
         elif operator == "/":
-            if float(operand2) == 0.0:
-                print("Cannot divide by zero")
+            if f2 == 0.0:
+                dividebyZero = True
             else:
-                result = float(operand1) / float(operand2)
-                print(result)
+                result = f1 / f2
         else:
-            print("Invalid operator")
+            validOperator = False
+        if validOperator == False:
+            print("Invalid Operator")
+        elif dividebyZero == True:
+            print("Cannot divide by zero")
+        else:
+            print(result)
 
     else:
         print("Failed to input numbers")
