@@ -28,7 +28,7 @@ if len(sys.argv) == 4: #Sys.argv[0] returns file directory
                 elif operator == "*":
                     result = float(operand1) * float(operand2)
                     print(result)
-                elif operator == "/"
+                elif operator == "/":
                     result = float(operand1) / float(operand2)
                     print(result)
                 else:
