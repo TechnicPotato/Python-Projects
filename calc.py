@@ -14,27 +14,24 @@ if len(sys.argv) == 4: #Sys.argv[0] returns file directory
     operand2 = sys.argv[3]
     operator = sys.argv[2]
     if conditions(operand1) and conditions(operand2):
-        if operator in acceptablefunctions:
-            if operator == "/" and float(operand2) == 0:
+        if operator == "+":
+            result = float(operand1) + float(operand2)
+            print(result)
+        elif operator == "-":
+            result = float(operand1) - float(operand2)
+            print(result)
+        elif operator == "*":
+            result = float(operand1) * float(operand2)
+            print(result)
+        elif operator == "/":
+            if float(operand2) == 0.0:
                 print("Cannot divide by zero")
             else:
-                #print(eval(operand1+operator+operand2)) #concatenantes string to be evaluated
-                if operator == "+":
-                    result = float(operand1) + float(operand2)
-                    print(result)
-                elif operator == "-":
-                    result = float(operand1) - float(operand2)
-                    print(result)
-                elif operator == "*":
-                    result = float(operand1) * float(operand2)
-                    print(result)
-                elif operator == "/":
-                    result = float(operand1) / float(operand2)
-                    print(result)
-                else:
-                    print("Error somewhere, you shouldnt see this message")
+                result = float(operand1) / float(operand2)
+                print(result)
         else:
             print("Invalid operator")
+
     else:
         print("Failed to input numbers")
 else:
