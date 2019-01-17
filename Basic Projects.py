@@ -60,5 +60,4 @@ def functionfactorize(n):
 	return(factors)
 
 def isPrime(n):
-	if len(functionfactorize(n)) == 1:
-		print(True)
+	return len(functionfactorize(n)) == 1
