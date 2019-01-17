@@ -1,4 +1,4 @@
-import turtle, time
+import turtle, time, sys
 #99 Bottles of Beer
 def bottles(n):
 	bottles = n
@@ -50,3 +50,15 @@ def gradeinput(Name,Grade):
 	student_grades[str(Name)] = str(Grade)
 def clear():
 	student_grades = {}
+
+#Factorisation Stuff
+def functionfactorize(n):
+	factors = []
+	for i in range(2,n+1):
+		if n%(i) == 0:
+			factors.append(i)
+	return(factors)
+
+def isPrime(n):
+	if len(functionfactorize(n)) == 1:
+		print(True)
