@@ -1,4 +1,4 @@
-import turtle, time, sys
+import turtle, time, sys, re
 #99 Bottles of Beer
 def bottles(n):
 	bottles = n
@@ -61,3 +61,28 @@ def functionfactorize(n):
 
 def isPrime(n):
 	return len(functionfactorize(n)) == 1
+
+#Variable Calculator
+'''rawstring = input("Enter the raw string")
+Just manually edit the rawstring'''
+def initialprocessing(rawstring):
+	processedstring = rawstring.split("\n")
+	stringprocessing = [i.replace(","," ").split() for i in processedstring]
+	finalproduct = [[int(i) for i in x] for x in stringprocessing]
+	return finalproduct
+def secondaryprocessing(rawstring):
+	rawlist = initialprocessing(rawstring)
+	maximum = max([len(i) for i in rawlist])
+	for i in rawlist:
+		while True:
+			if len(i) < maximum:
+				i.append(0)
+			else:
+				break
+	return rawlist
+
+def task(rawstring):
+	processedstring = secondaryprocessing(rawstring)
+	math = [sum(i) for i in processedstring]
+	overallsum =  [sum([b[a] for b in processedstring]) for a in range(0,len(processedstring[0]))]
+	
