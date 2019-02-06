@@ -79,10 +79,15 @@ def secondaryprocessing(rawstring):
 				i.append(0)
 			else:
 				break
+		i.append(sum(i))
 	return rawlist
 
 def task(rawstring):
 	processedstring = secondaryprocessing(rawstring)
-	math = [sum(i) for i in processedstring]
 	overallsum =  [sum([b[a] for b in processedstring]) for a in range(0,len(processedstring[0]))]
-	
+	for i in processedstring:
+		for c in i:
+			print(" "*(3-len(str(c))) + (" " if c == 0 else str(c)), end = "")
+		print() #Designed to break up lists into different lines.
+	print("-" * 3 * len(processedstring[0]))
+	[print(" "*(3-len(str(c))) + str(c), end ="") for c in overallsum]
