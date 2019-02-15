@@ -44,3 +44,19 @@ def fibonacci(terms):
 
 #Problem 26 T =
 '''On hold until I figure out a method'''
+
+#Problem 28 T = 16:53
+#Numbers in the grid = 1001*1001
+#Grid moves by n//2 terms every (n-1)
+def p28():
+    from math import sqrt
+    overallsum = 1
+    n = (1001 * 1001)
+    multiplier = 2
+    last = 1
+    #Find out how many sets of 4 are doable
+    for i in range(1,(int(sqrt(n))//2)+1):
+        overallsum += (4* last + 10* multiplier)
+        last += 4*multiplier
+        multiplier += 2
+    return overallsum
