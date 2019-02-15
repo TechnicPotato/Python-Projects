@@ -27,3 +27,16 @@ def p24():
     b = list(a)
     b.sort()
     return b[999999]
+
+#Problem 25 T = 7:36
+def fibonacci(terms):
+    sequence = [1,1,2]
+    if terms > 3:
+        for i in range(2,terms - 1):
+            if len(str(sequence[i] +sequence[i-1])) == 1000:
+                break
+            sequence.append(sequence[i] + sequence[i-1])
+
+        return i + 2
+    else:
+        return False
