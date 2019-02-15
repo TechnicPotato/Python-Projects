@@ -60,3 +60,9 @@ def p28():
         last += 4*multiplier
         multiplier += 2
     return overallsum
+
+#Problem 29 T = 5:19
+def p29():
+    l = []
+    [l.append(a**b) for a in range(2,101) for b in range(2,101) if a**b not in l]
+    return len(l)
