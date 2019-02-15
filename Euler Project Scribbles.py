@@ -19,6 +19,7 @@ def p23():
     return abundant
     removelist =  [sum(a,b) for a in abundant for b in abundant if ((a + b) < 28124)]
     return removelist
+'''On hold until a method for faster solving is determined'''
 
 #Problem 24 T = 22:00
 def p24():
@@ -40,3 +41,6 @@ def fibonacci(terms):
         return i + 2
     else:
         return False
+
+#Problem 26 T =
+'''On hold until I figure out a method'''
