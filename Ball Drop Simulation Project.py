@@ -26,9 +26,8 @@ balllist = []
 #Alters randomness of Balls
 for n in range(BallNumber):
     size = random.randint(1,20)
-    x = random.randint(size,width-size)
-    y = random.randint (size, height-size)
-    balllist.append((ball(x,y),size))
+    position = (random.randint(size,width-size), random.randint(size, height-size))
+    balllist.append((ball(position,size)))
 #Display Balls
 for ball in balllist:
     ball.display()
