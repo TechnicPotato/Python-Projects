@@ -3,6 +3,9 @@
 #Basic file handling steps
 '''fh =  open(r'C:\Users\w\Desktop\Programming\p022_names.txt')
 toread = read(fh)'''
+#Problem 1
+sum([x for x in range(1,1000) if (x % 5 == 0 or x % 3 == 0)])
+
 #Problem 22 T= 23:05
 def p22():
     fh =  open(r'C:\Users\w\Desktop\Programming\p022_names.txt')
