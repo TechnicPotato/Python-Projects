@@ -3,8 +3,88 @@
 #Basic file handling steps
 '''fh =  open(r'C:\Users\w\Desktop\Programming\p022_names.txt')
 toread = read(fh)'''
+from math import sqrt
 #Problem 1
 sum([x for x in range(1,1000) if (x % 5 == 0 or x % 3 == 0)])
+
+#Problem 2 T = 10:00
+def fibonacci(max):
+    fibList = []
+    a = 1
+    b = 0
+    c = None
+    while (a < max):
+        fibList.append(a)
+        #Do the variable shift!
+        c = b
+        b = a
+        a = b + c
+    return fibList
+
+sum(filter(lambda x: x%2 == 0,fibonacci(4000000)))
+
+#Problem 3 T= 40:00
+def recursive_division(n, list):
+    for i in range(2,n + 1):
+        if n % i  == 0:
+            list.append(i)
+            n = n // i
+            if n == 1:
+                return #break here
+            else:
+                recursive_division(n, list)
+                break
+
+def p3(n):
+    primelist = []
+    recursive_division(n,primelist)
+    return primelist
+
+#Problem 4 T = 5:54
+def ispalindrome(n):
+    return str(n)[::-1] == str(n)
+
+max([a*b
+    for a in range(100,1000)
+        for b in range(100,1000)
+            if ispalindrome(a * b)])
+
+#Problem 5 T = 35:00
+def p5(n):
+    t = {}
+    for i in range(1,n+1):
+        t[i] = 0
+    b = [c for c in range(2,n+1)]
+    overallnum = map(lambda x: p3(x), b)
+    for c in overallnum:
+        temp = {}
+        for i in c:
+            if i in temp:
+                temp[i] += 1
+            else:
+                temp[i] = 1
+        for num in temp.keys():
+            if temp[i] > t[i]:
+                t[i] = temp[i]
+    result = 1
+    for i in t.keys():
+        result *= i ** t[i]
+    return result
+
+#Problem 7 T = 13:24
+def primes(target):
+    primelist = [2]
+    n = 3
+    while len(primelist) < target:
+        for prime in primelist:
+            if n % prime == 0:
+                n = n + 1
+                break
+        else:
+            primelist.append(n)
+            n = n + 1
+    return primelist[target - 1]
+
 
 #Problem 22 T= 23:05
 def p22():
@@ -17,10 +97,10 @@ def p22():
 #Problem 23 T = ~30 m +
 def p23():
     abundant = [number for
-                    number in range(1,28124-12)
+                    number in range(12,28124)
                     if (number < sum([n for n in range(1,number//2 + 1) if (number % n == 0)]))]
-    return abundant
-    removelist =  [sum(a,b) for a in abundant for b in abundant if ((a + b) < 28124)]
+    returnlist = list(range(28124))
+    for a in abundan
     return removelist
 '''On hold until a method for faster solving is determined'''
 
@@ -33,7 +113,7 @@ def p24():
     return b[999999]
 
 #Problem 25 T = 7:36
-def fibonacci(terms):
+def fibonacci2(terms):
     sequence = [1,1,2]
     if terms > 3:
         for i in range(2,terms - 1):
@@ -52,7 +132,6 @@ def fibonacci(terms):
 #Numbers in the grid = 1001*1001
 #Grid moves by n//2 terms every (n-1)
 def p28():
-    from math import sqrt
     overallsum = 1
     n = (1001 * 1001)
     multiplier = 2
@@ -69,3 +148,12 @@ def p29():
     l = []
     [l.append(a**b) for a in range(2,101) for b in range(2,101) if a**b not in l]
     return len(l)
+
+#Problem 30 T = 10:07
+def p30():
+    return [i for i in range(2,1000000) if sum([int(c)**5 for c in str(i)]) == i]
+    #Potentially find a mathematical solution to a bounds for range()
+
+#Problem 34 T =
+def fact(n):
+    return [n-1 * ]
