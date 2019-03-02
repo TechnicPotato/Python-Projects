@@ -85,6 +85,36 @@ def primes(target):
             n = n + 1
     return primelist[target - 1]
 
+#Problem 10
+'''Find better sieve
+def p10():
+    primes = [2]
+    for i in range(3,2000001):
+        for prime in primes:
+            if i%prime == 0:
+                break
+        else:
+            primes.append(i)
+    return sum(primes)'''
+
+#Problem 11
+def p11():
+    fh = open(r"D:\Programming\input.txt")
+    file = fh.read().split("\n")
+    grid = [[int(a) for a in c.split(' ')] for c in file]
+    horizontal = [grid[a][i]*grid[a][i+1]*grid[a][i+2]*grid[a][i+3]
+                    for a in range(0,20)
+                    for i in range(0,20-3)]
+    rdiagonal = [grid[a][i]*grid[a+1][i+1]*grid[a+2][i+2]*grid[a+3][i+3]
+                    for a in range(0,20-3)
+                    for i in range(0,20-3)]
+    ldiagonal = [grid[a][i]*grid[a+1][i-1]*grid[a+2][i-2]*grid[a+3][i-3]
+                    for a in range(0,20-3)
+                    for i in range(3,20)]
+    vertical = [grid[a][i]*grid[a+1][i]*grid[a+2][i]*grid[a+3][i]
+                    for a in range(0,20-3)
+                    for i in range(0,20)]
+    return max([max(vertical),max(horizontal),max(rdiagonal),max(ldiagonal)])
 
 #Problem 22 T= 23:05
 def p22():
