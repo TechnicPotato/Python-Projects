@@ -5,16 +5,19 @@
 3. Define hundred, and use
 4. Define thousand'''
 numbers = ('one','two','three','four','five','six','seven','eight','nine')
-tens = ('twenty','thirty','fourty','fifty','sixty','seventy','eighty','ninety')
+tens = ('twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety')
 weird = ('ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen')
 hundred = 'hundred'
 and_string = 'and'
 thousand = 'thousand'
+output = []
 
 def conversion(s,n):
     length = len(n)
     if int(n) == 0:
-        return print(s)      
+        output.append(s)
+        #print(s)
+        return       
     elif length == 1:
         s += numbers[int(n) - 1]
         n = '0'
@@ -42,13 +45,8 @@ def conversion(s,n):
         conversion(s,n)
     else:
         print("Invalid")
-
-while True:
-    n = input("Enter number: ")
-    if n == "Q":
-        break
-    else:
-        conversion("",n)
-    
-
-
+# Challenge portion
+for i in range(1,1001):
+    conversion('',str(i))
+numlist = [len(i.replace(" ","")) for i in output]
+print((sum(numlist)))
