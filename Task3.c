@@ -3,6 +3,26 @@
 char buf[32];
 int count = 0;
 int int_array[20];
+// Shitty string copier
+int copystr(char* dest, char* source){
+    
+
+// Passport Check Function
+int passport_check(char *string){
+    char code;
+    int danger_level
+    code = getchar();
+    if (code == EOF){
+        return 0;
+        }
+    else if (code == 'O'){
+        danger_level = getchar() - '0';
+        if (danger_level > 4){
+            string = "Get Lost!"
+            }
+        }
+    return 1;
+    }
 // Reading Age Function
 int read_age(void){
     int c;
@@ -41,10 +61,12 @@ void calculate_average(){
     }
 // Main Function
 int main(){  
-
     int age;
+    int conditional;
     int i = 0;
-    while (i < 5){
+    char buf2[32];
+    while (conditional == 1){
+        conditional = passport_check(buf2);
         age = read_age();
         int_array[count] = age;
         count ++;
