@@ -74,7 +74,6 @@ int read_age(void){
 	       n = n * 10 + (age[i] - '0');
 	       i ++;
     	}
-    	age[i] = '\0';
     	return n;
 }
 
