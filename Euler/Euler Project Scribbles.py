@@ -187,3 +187,13 @@ def p30():
 #Problem 34 T =
 def fact(n):
     return [n-1 * ]
+
+#Problem 48 T = 2:19
+def p48():
+    output = []
+    for i in range(1,1001):
+        output.append(i**i)
+    a = str(sum(output))
+    return a[len(a)-10:len(a)]
+
+
