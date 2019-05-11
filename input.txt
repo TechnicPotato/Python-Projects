@@ -1,0 +1,9 @@
+A
+40
+Donald Duck
+O1
+44
+Daisy Duck
+R
+42
+Simon
